@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: barebone_rails_development
+  database: cran_index_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: barebone_rails_test
+  database: cran_index_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: barebone_rails_production
-  username: barebone_rails
-  password: <%= ENV['barebone_rails_DATABASE_PASSWORD'] %>
+  database: cran_index_production
+  username: cran_index
+  password: <%= ENV['CRAN_INDEX_DATABASE_PASSWORD'] %>
