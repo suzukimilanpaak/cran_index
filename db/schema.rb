@@ -42,7 +42,8 @@ ActiveRecord::Schema.define(version: 20160420101721) do
 
   create_table "packages", force: :cascade do |t|
     t.string   "name",                   limit: 150
-    t.string   "current_description_id", limit: 255
+    t.integer  "current_description_id", limit: 4
+    t.string   "current_version",        limit: 20
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end

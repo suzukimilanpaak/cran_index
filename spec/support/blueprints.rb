@@ -1,17 +1,13 @@
 require 'machinist/active_record'
 
 Package.blueprint do
-  # Attributes here
+  name { "Package_#{sn}" }
+  current_version { sn }
 end
 
 Description.blueprint do
-  # Attributes here
-end
-
-Committer.blueprint do
-  # Attributes here
-end
-
-CommittersDescription.blueprint do
-  # Attributes here
+  version { sn }
+  title { "Description_#{sn}" }
+  description { "description #{sn}" }
+  published_at { 1.day.ago }
 end
