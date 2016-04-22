@@ -39,6 +39,15 @@ class Package < ActiveRecord::Base
     class_name: 'Description',
     foreign_key: 'current_description_id'
 
+  def self.list
+    relation = all.preload(descriptions: [:authors, :maintainers])
+    if Rails.env.development?
+      relation.limit(MAX_INDEX_SIZE)
+    else
+      relation
+    end
+  end
+
   # Revises packages
   #
   # Fetches package info from Cran DCF and update if new packages are found.
